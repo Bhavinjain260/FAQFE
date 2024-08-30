@@ -183,27 +183,48 @@ faqs = {
         "media": "https://player.vimeo.com/video/804824760#t=61m53s"
 
     }, "How to Update Mandate from BSE": {
-        """Update Mandate from BSE:
-Go to Admin Panel > Clients under Main.
-Search and select the client by clicking on their name.
-Click Action and select Update Mandate from BSE.This will fetch all mandates attached to the UCC.
-
-
-"""
+        "solution": """
+        
+        1. Go to Admin Panel > Clients under Main.
+        2. Search and select the client by clicking on their name.
+        3. Click Action and select Update Mandate from BSE.
+        4. This will fetch all mandates attached to the UCC.
+        """,
+        "media": "Coming Soon..."
 
     }, "How to Change the Family Head": {
-        """
-Go to the Admin Panel > Clients under Main.
-Search and select the client by clicking on their name.
-Search and select the client by clicking on their name.Click Action and select Make User Family Head.Note: The selected member must already be an existing family member.
-"""
-
+        "solution": """
+        1. Go to the Admin Panel > Clients under Main.
+        2. Search and select the client by clicking on their name.
+        3. Search and select the client by clicking on their name.
+        4. Click Action and select Make User Family Head.
+        
+        Note: The selected member must already be an existing family member.
+        """,
+        "media": "Coming Soon..."
 
     }, "How to Reuse the same UCC if expired": {
+        "solution":
         """
-        Go to Admin Panel > Clients under Main.Click Action and select Register/Update Client on BSE.This registers the client with the same UCC.Login to BSE and trigger the UCC mail.
-        """
-    }
+        1. Go to **Admin Panel > Clients** under **Main**.
+        2. Click **Action** and select **Register/Update Client on BSE**.
+        3. This will register the client with the same UCC.
+        4. Log in to **BSE** and trigger the UCC mail.
+        """,
+        "media": "Coming Soon..."
+    },
+
+    "How to resend UCC Authentication mail from BSE": {
+        "solution": """
+        1. Log in to **BSE**.
+        2. Go to **Admin > Resend Email Authentication**.
+        3. Select **Process Type: UCC Authentication**.
+        4. Enter **Client ID**.
+        5. Click **Send** to resend the UCC Authentication mail.
+        """,
+        "media": "Coming Soon..."
+    },
+
 
 
 
