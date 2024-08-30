@@ -1,5 +1,7 @@
 import streamlit as st
 
+
+
 faqs = {
     "How to Update BSE Password in FundExpert?": {
         "solution": """
@@ -15,7 +17,7 @@ faqs = {
 
         Your BSE password will be updated in the system.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1XjT1B9V9VQRn8iYEwE8gebjFy_VJ2KhH/preview"
     },
     "How to Create Family Accounts?": {
         "solution": """
@@ -161,6 +163,52 @@ faqs = {
         """,
         "media": "Coming Soon..."
     },
+    "How to upload Logo and Email Banner":{
+        "solution": """
+        1. Prepare files:
+
+        > Logo: 600x600 pixels (name it "Logo").\n
+        > Email Banner: 850x150 pixels (name it "EmailBanner").
+        2. Go to Admin Panel > MIS > My App Details.
+        3. Upload (left side options):
+        > Logo.\n
+        > Email Banner.
+        """,
+        "media": "Coming Soon..."
+    },
+    "CRM Training video":{
+        "solution": """
+        Please find the CRS Training below
+        """,
+        "media": "https://player.vimeo.com/video/804824760#t=61m53s"
+
+    }, "How to Update Mandate from BSE": {
+        """Update Mandate from BSE:
+Go to Admin Panel > Clients under Main.
+Search and select the client by clicking on their name.
+Click Action and select Update Mandate from BSE.This will fetch all mandates attached to the UCC.
+
+
+"""
+
+    }, "How to Change the Family Head": {
+        """
+Go to the Admin Panel > Clients under Main.
+Search and select the client by clicking on their name.
+Search and select the client by clicking on their name.Click Action and select Make User Family Head.Note: The selected member must already be an existing family member.
+"""
+
+
+    }, "How to Reuse the same UCC if expired": {
+        """
+        Go to Admin Panel > Clients under Main.Click Action and select Register/Update Client on BSE.This registers the client with the same UCC.Login to BSE and trigger the UCC mail.
+        """
+    }
+
+
+
+
+
 }
 
 st.title("FundExpert FAQ")
@@ -178,7 +226,13 @@ if search_query:
             st.subheader("Solution")
             st.write(content["solution"])
             st.subheader("Screenshot/Video")
-            st.write(content["media"])
+            if content["media"] != "Coming Soon...":
+                st.markdown(
+                    f'<iframe src="{content["media"]}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>',
+                    unsafe_allow_html=True,
+                )
+            else:
+                st.write(content["media"])
     else:
         st.write("No FAQs found for your search query.")
 else:
@@ -188,4 +242,10 @@ else:
         st.subheader("Solution")
         st.write(content["solution"])
         st.subheader("Screenshot/Video")
-        st.write(content["media"])
+        if content["media"] != "Coming Soon...":
+            st.markdown(
+                f'<iframe src="{content["media"]}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>',
+                unsafe_allow_html=True,
+            )
+        else:
+            st.write(content["media"])
