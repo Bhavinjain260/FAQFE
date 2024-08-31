@@ -180,7 +180,8 @@ faqs = {
         """,
         "media": "https://player.vimeo.com/video/804824760#t=61m53s"
 
-    }, "How to Update Mandate from BSE": {
+    },
+    "How to Update Mandate from BSE": {
         "solution": """
         
         1. Go to Admin Panel > Clients under Main.
@@ -190,7 +191,8 @@ faqs = {
         """,
         "media": "https://drive.google.com/file/d/1l5GN2JNHQNnipOTS3ykQi13hOoy4dvLK/preview"
 
-    }, "How to Change the Family Head": {
+    },
+    "How to Change the Family Head": {
         "solution": """
         1. Go to the Admin Panel > Clients under Main.
         2. Search and select the client by clicking on their name.
@@ -201,7 +203,8 @@ faqs = {
         """,
         "media": "Coming Soon..."
 
-    }, "How to Reuse the same UCC if expired": {
+    },
+    "How to Reuse the same UCC if expired": {
         "solution":
             """
             1. Go to **Admin Panel > Clients** under **Main**.
@@ -211,7 +214,6 @@ faqs = {
             """,
         "media": "Coming Soon..."
     },
-
     "How to resend UCC Authentication mail from BSE": {
         "solution": """
         1. Log in to **BSE**.
@@ -222,203 +224,225 @@ faqs = {
         """,
         "media": "Coming Soon..."
     },
-
     "How to onboard HUF client": {
+
         "solution": """
-    Documentation Required:
-    1. HUF PAN Copy
-    2. Image of KARTA's signature under his seal (blue ink)
+        
+        Documentation Required:
+        1. HUF PAN Copy
+        2. Image of KARTA's signature under his seal (blue ink)
 
-    Onboarding Process from Fund Expert (FE):
+        Onboarding Process from Fund Expert (FE):
+    
+        1. Add Client:
+        - Use the "Add Client" option to onboard the client as HUF.
+    
+        2. Fill out Details and Create UCC:
+        - Fill out all necessary details and create the UCC.
+        - Ensure the UCC is authenticated by the client.
+    
+        3. Upload Documents:
+        - In the "Upload Document" section, upload the HUF PAN and Karta’s signature image.
+        - Download AOF (Application-cum-Client Agreement Form): Click on "Download Generated AOF" to download the AOF.
+    
+        4. Upload AOF in BSE:
+        - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
+        - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+    
+        5. Mark AOF as Done in FE:
+        - In FE, go to admin -> Main -> Users.
+        - Click on "Mark AOF as Done" in Quick Action for that client.
+    
+        6. Fill out FATCA and Submit from FE:
+        - Fill out the FATCA form and submit it from FE.
+        - Download AOF in PDF from BSE: Login to BSE and download the AOF in PDF format.
+        - Path: Admin » Client Details » AOF / FATCA Download.
+    
+        7. Upload FATCA in BSE:
+        - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
+        - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
+    
+        8. Mark FATCA as Done in FE:
+        - In FE, go to admin -> Main -> Users.
+        - Click on "Mark FATCA as Done" in Quick Action for that client.
 
-    1. Add Client:
-    - Use the "Add Client" option to onboard the client as HUF.
-
-    2. Fill out Details and Create UCC:
-    - Fill out all necessary details and create the UCC.
-    - Ensure the UCC is authenticated by the client.
-
-    3. Upload Documents:
-    - In the "Upload Document" section, upload the HUF PAN and Karta’s signature image.
-    - Download AOF (Application-cum-Client Agreement Form): Click on "Download Generated AOF" to download the AOF.
-
-    4. Upload AOF in BSE:
-    - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
-    - Enter the client code, select the type as UCC, and upload the downloaded AOF.
-
-    5. Mark AOF as Done in FE:
-    - In FE, go to admin -> Main -> Users.
-    - Click on "Mark AOF as Done" in Quick Action for that client.
-
-    6. Fill out FATCA and Submit from FE:
-    - Fill out the FATCA form and submit it from FE.
-    - Download AOF in PDF from BSE: Login to BSE and download the AOF in PDF format.
-    - Path: Admin » Client Details » AOF / FATCA Download.
-
-    7. Upload FATCA in BSE:
-    - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
-    - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
-
-    8. Mark FATCA as Done in FE:
-    - In FE, go to admin -> Main -> Users.
-    - Click on "Mark FATCA as Done" in Quick Action for that client.
-
-    By following these steps, you can successfully onboard HUF clients and ensure all necessary documentation is submitted and authenticated.
-    """,
+        By following these steps, you can successfully onboard HUF clients and ensure all necessary documentation is submitted and authenticated.
+        """,
         "media": "Coming Soon..."
     },
 
     "How to Onboard Minor Client": {
+
         "solution": """
-    How to onboard minor clients using FundExpert:
-
-    Documents for Minor:
-    1. Proof of Date of Birth of the Minor:
-       - You can click a picture of either of the following documents:
-         Birth Certificate, School Leaving Certificate, or others.
-    2. If the guardian is not a parent, then a picture of the court order specifying the individual as the Guardian.
-    3. Signature Image of the guardian in blue ink on a white sheet of paper.
-
-    Process:
-    1. Onboard the client on FundExpert and create the UCC.
-    2. Once the UCC is created, ensure it is authenticated.
-    3. For minors, upload the cheque or bank statement directly on BSE:
-       - From FE’s admin, directly login to BSE.
-       - In BSE -> Admin -> Client Details -> Elog/Image Upload.
-       - Enter the client code, select the type as cheque, and upload the bank proof in PDF.
-       - BSE will take 24 hours to make the UCC active.
-
-    4. From the front panel:
-       - Upload all the documents and download the AOF by clicking on "Download Generated AOF".
+        Documents for Minor:
+        1. Proof of Date of Birth of the Minor:
+           - You can click a picture of either of the following documents:
+             Birth Certificate, School Leaving Certificate, or others.
+        2. If the guardian is not a parent, then a picture of the court order specifying the individual as the Guardian.
+        3. Signature Image of the guardian in blue ink on a white sheet of paper.
     
-    5. From FE’s admin, directly login to BSE:
-       - In BSE -> Admin -> Client Details -> Elog/Image Upload.
-       - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+        Process:
+        1. Onboard the client on FundExpert and create the UCC.
+        2. Once the UCC is created, ensure it is authenticated.
+        3. For minors, upload the cheque or bank statement directly on BSE:
+           - From FE’s admin, directly login to BSE.
+           - In BSE -> Admin -> Client Details -> Elog/Image Upload.
+           - Enter the client code, select the type as cheque, and upload the bank proof in PDF.
+           - BSE will take 24 hours to make the UCC active.
     
-    6. In FE:
-       - Go to Admin -> Main -> Users.
-       - Click on "Mark AOF as Done" in Quick Action for that client.
-    """,
+        4. From the front panel:
+           - Upload all the documents and download the AOF by clicking on "Download Generated AOF".
+        
+        5. From FE’s admin, directly login to BSE:
+           - In BSE -> Admin -> Client Details -> Elog/Image Upload.
+           - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+        
+        6. In FE:
+           - Go to Admin -> Main -> Users.
+           - Click on "Mark AOF as Done" in Quick Action for that client.
+        """,
         "media": "Coming Soon..."
     },
     "How to Onboard NRI Clients": {
         "solution": """
-    **Documents Required:**
-    1. **Cheque Copy with NRI Tax Status:**
-       - The cheque copy must clearly display the NRI Tax status.
-    2. **Standard Onboarding Documents:**
-       - All other documents required for individual client onboarding (e.g., PAN card, proof of address, etc.).
-
-    **Onboarding Process from Fund Expert (FE):**
-
-    1. **Add Client:**
-       - Navigate to the "Add Client" option in FundExpert.
-       - Select the client type as **NRI** to onboard the client accordingly.
-
-    2. **Fill out Details and Create UCC:**
-       - Enter all necessary client details in the onboarding form.
-       - Create the **Unique Client Code (UCC)** for the client.
-       - **Important:** Ensure that the UCC is authenticated by the client to proceed.
-
-    3. **Upload Documents:**
-       - Go to the "Upload Document" section within FundExpert.
-       - Upload the **Cheque Copy with NRI Tax Status** and any other required standard documents.
-       - After uploading, click on **"Download Generated AOF"** to obtain the Application-cum-Client Agreement Form (AOF).
-
-    4. Complete the Profile by Submitting the AOF and FATCA (Same as individual client)
-
-    **Completion:**
-    - Once all the above steps are completed, the NRI client's onboarding process is successfully finalized.
-    - The client's UCC will become active within 24 hours after uploading the necessary documents in BSE.
-
-    """,
-        "media": "Coming Soon..."
-    },
-
-    "How to onboard PartnerShip firm": {
-        "solution": """
-
-How to Onboard a Partnership Firm
-
-**Required Documents:**
-1. Cancelled Cheque
-2. PAN Image
-3. Company's Sign with Seal (on white paper)
-4. Partnership Deed (First and Last Page)
-
-**Process:**
-
-1. **Onboard the Client on FundExpert:**
-    - Register the partnership firm as a client in FundExpert.
-    - After the profile is saved, the BSE UCC will be created.
-
-2. **Complete Required Authentication:**
-    - Once the UCC is created, ensure that the required authentication is done.
-
-3. **Upload Documents and Download AOF:**
-    - Upload all the required documents listed above.
-    - Download the AOF (Account Opening Form) by clicking on "Download AOF Generated."
-
-4. **Upload AOF to BSE:**
-    - In FundExpert (FE) Admin, use the option "Directly Login to BSE."
-    - In BSE, navigate to: 
-      - Admin → Client Details → Elog/Image Upload
-    - Enter the client code, select the type as "UCC," and upload the downloaded AOF.
-
-5. **Mark AOF as Done in FundExpert:**
-    - In FE, go to:
-      - Admin → Main → Users
-    - Click on "Mark AOF as Done" in Quick Action for that client.
-
-6. **Fill Out and Submit FATCA in FundExpert:**
-    - Fill out the FATCA form and submit it from FE.
-
-7. **Download AOF from BSE:**
-    - Login to BSE and download the AOF in PDF format.
-    - Path: Admin → Client Details → AOF/FATCA Download
-
-8. **Upload FATCA to BSE:**
-    - Navigate to:
-      - BSE → Admin → Client Details → Elog/Image Upload
-    - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
-
-9. **Mark FATCA as Done in FundExpert:**
-    - In FE, go to:
-      - Admin → Main → Users
-    - Click on "Mark FATCA as Done" in Quick Action for that client.
-
-By following these steps, you can successfully onboard a partnership account and ensure all necessary documentation is submitted and authenticated.
+        
+        **Documents Required:**
+        1. **Cheque Copy with NRI Tax Status:**
+           - The cheque copy must clearly display the NRI Tax status.
+        2. **Standard Onboarding Documents:**
+           - All other documents required for individual client onboarding (e.g., PAN card, proof of address, etc.).
+    
+        **Onboarding Process from Fund Expert (FE):**
+    
+        1. **Add Client:**
+           - Navigate to the "Add Client" option in FundExpert.
+           - Select the client type as **NRI** to onboard the client accordingly.
+    
+        2. **Fill out Details and Create UCC:**
+           - Enter all necessary client details in the onboarding form.
+           - Create the **Unique Client Code (UCC)** for the client.
+           - **Important:** Ensure that the UCC is authenticated by the client to proceed.
+    
+        3. **Upload Documents:**
+           - Go to the "Upload Document" section within FundExpert.
+           - Upload the **Cheque Copy with NRI Tax Status** and any other required standard documents.
+           - After uploading, click on **"Download Generated AOF"** to obtain the Application-cum-Client Agreement Form (AOF).
+    
+        4. Complete the Profile by Submitting the AOF and FATCA (Same as individual client)
+    
+        **Completion:**
+        - Once all the above steps are completed, the NRI client's onboarding process is successfully finalized.
+        - The client's UCC will become active within 24 hours after uploading the necessary documents in BSE.
         """,
         "media": "Coming Soon..."
     },
-
+    "How to onboard PartnerShip firm": {
+        "solution": """
+        
+        How to Onboard a Partnership Firm
+        
+        **Required Documents:**
+        1. Cancelled Cheque
+        2. PAN Image
+        3. Company's Sign with Seal (on white paper)
+        4. Partnership Deed (First and Last Page)
+        
+        **Process:**
+        
+        1. **Onboard the Client on FundExpert:**
+            - Register the partnership firm as a client in FundExpert.
+            - After the profile is saved, the BSE UCC will be created.
+        
+        2. **Complete Required Authentication:**
+            - Once the UCC is created, ensure that the required authentication is done.
+        
+        3. **Upload Documents and Download AOF:**
+            - Upload all the required documents listed above.
+            - Download the AOF (Account Opening Form) by clicking on "Download AOF Generated."
+        
+        4. **Upload AOF to BSE:**
+            - In FundExpert (FE) Admin, use the option "Directly Login to BSE."
+            - In BSE, navigate to: 
+              - Admin → Client Details → Elog/Image Upload
+            - Enter the client code, select the type as "UCC," and upload the downloaded AOF.
+        
+        5. **Mark AOF as Done in FundExpert:**
+            - In FE, go to:
+              - Admin → Main → Users
+            - Click on "Mark AOF as Done" in Quick Action for that client.
+        
+        6. **Fill Out and Submit FATCA in FundExpert:**
+            - Fill out the FATCA form and submit it from FE.
+        
+        7. **Download AOF from BSE:**
+            - Login to BSE and download the AOF in PDF format.
+            - Path: Admin → Client Details → AOF/FATCA Download
+        
+        8. **Upload FATCA to BSE:**
+            - Navigate to:
+              - BSE → Admin → Client Details → Elog/Image Upload
+            - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
+        
+        9. **Mark FATCA as Done in FundExpert:**
+            - In FE, go to:
+              - Admin → Main → Users
+            - Click on "Mark FATCA as Done" in Quick Action for that client.
+        
+        By following these steps, you can successfully onboard a partnership account and ensure all necessary documentation is submitted and authenticated.
+                """,
+        "media": "Coming Soon..."
+    },
     "BSE Onboarding Checklist": {
+
         "solution": """
         DETAILS required to onboard a new client who is
         KYC compliant on FundExpert to open an account at BSEStar:
-
-1. **Full Name as per PAN:**
-2. **Email:**
-3. **Mobile:**
-4. **PAN No:**
-5. **Date of Birth:**
-6. **Occupation:**
-7. **Marital Status:**
-8. **Address & Pincode:**
-9. **Bank Details:**
-    - a) Bank IFSC Code:
-    - b) Bank Account Number:
-    - c) Bank Account Type:
-10. **Nominee Details:**
-    - a) Nominee Name:
-    - b) Relation with Nominee:
-    - c) Percentage:
-11. **Place of Birth:**
-12. **Specimen Signature Image:** 
-    - On white plain paper with blue ink pen.
-
-        """,
+        1. **Full Name as per PAN:**
+        2. **Email:**
+        3. **Mobile:**
+        4. **PAN No:**
+        5. **Date of Birth:**
+        6. **Occupation:**
+        7. **Marital Status:**
+        8. **Address & Pincode:**
+        9. **Bank Details:**
+            - a) Bank IFSC Code:
+            - b) Bank Account Number:
+            - c) Bank Account Type:
+        10. **Nominee Details:**
+            - a) Nominee Name:
+            - b) Relation with Nominee:
+            - c) Percentage:
+        11. **Place of Birth:**
+        12. **Specimen Signature Image:** 
+            - On white plain paper with blue ink pen.
+                """,
         "media": "Coming Soon..."
+    },
+
+    "Digi Locker KYC Flow": {
+        "solution": """
+
+        Instructions to Investors
+
+        Step 1 → Fill in your Identity details & upload a scanned copy of your PAN Card.
+        Ensure the scanned image has PAN Number, Name, DOB, Signature, Father’s Name, Photo, and issuer name clearly visible.
+        
+        Step 2 → You will be redirected to the Digilocker platform to fetch address details & necessary address proof. 
+        Aadhaar to Phone linking is mandatory for this step, so please ensure you have the registered phone number available to input the OTP**.
+        
+        Step 3 → Upload a scanned image of your signature.
+        
+        Step 4 → Enter additional details required for KYC.
+        
+        Step 5 → You will be redirected to review your KYC details and e-sign the document using Aadhaar for final submission.
+        
+        Step 6 → Completion of e-sign will put your KYC for review. In 5 to 7 working days, you will receive a notification via email.
+        
+        *NRIs, Minors, and Non-individuals cannot use the online Digilocker Aadhaar KYC mode. Please reach out to your advisor for further assistance.
+        **If your Aadhaar Phone linking is not available, then the online Digilocker Aadhaar KYC mode cannot be completed. Please reach out to your advisor for further assistance.
+                """,
+        "media": "https://drive.google.com/file/d/1Icg0pDS-05KZjjHVvEgjVkQxyUH0cNgi/preview"
     }
 
 }
