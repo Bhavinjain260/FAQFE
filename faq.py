@@ -326,40 +326,7 @@ faqs = {
        - Upload the **Cheque Copy with NRI Tax Status** and any other required standard documents.
        - After uploading, click on **"Download Generated AOF"** to obtain the Application-cum-Client Agreement Form (AOF).
 
-    4. **Upload AOF in BSE:**
-       - Log in to **BSE** and navigate to:  
-         **Admin > Client Details > Elog/Image Upload**
-       - Enter the **Client Code**.
-       - Select the **Type** as **UCC**.
-       - Upload the previously downloaded **AOF** file.
-
-    5. **Mark AOF as Done in FE:**
-       - Return to **FundExpert** and go to:  
-         **Admin > Main > Users**
-       - Locate the specific client.
-       - Click on **"Mark AOF as Done"** in the Quick Action menu for that client.
-
-    6. **Fill out FATCA and Submit from FE:**
-       - Complete the **FATCA** (Foreign Account Tax Compliance Act) form within FundExpert.
-       - Submit the FATCA form directly from FundExpert.
-
-    7. **Download AOF in PDF from BSE:**
-       - Log in to **BSE**.
-       - Navigate to:  
-         **Admin > Client Details > AOF / FATCA Download**
-       - Download the **AOF** in PDF format.
-
-    8. **Upload FATCA in BSE:**
-       - Go back to:  
-         **Admin > Client Details > Elog/Image Upload** in BSE.
-       - Upload the **first 3 pages** of the FATCA form as a PDF.
-       - **Ensure:** The client's signature is included on the **3rd page** of the FATCA PDF.
-
-    9. **Mark FATCA as Done in FE:**
-       - In **FundExpert**, navigate to:  
-         **Admin > Main > Users**
-       - Locate the specific client.
-       - Click on **"Mark FATCA as Done"** in the Quick Action menu for that client.
+    4. Complete the Profile by Submitting the AOF and FATCA (Same as individual client)
 
     **Completion:**
     - Once all the above steps are completed, the NRI client's onboarding process is successfully finalized.
