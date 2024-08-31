@@ -1,7 +1,5 @@
 import streamlit as st
 
-
-
 faqs = {
     "How to Update BSE Password in FundExpert?": {
         "solution": """
@@ -163,7 +161,7 @@ faqs = {
         """,
         "media": "Coming Soon..."
     },
-    "How to upload Logo and Email Banner":{
+    "How to upload Logo and Email Banner": {
         "solution": """
         1. Prepare files:
 
@@ -176,7 +174,7 @@ faqs = {
         """,
         "media": "Coming Soon..."
     },
-    "CRM Training video":{
+    "CRM Training video": {
         "solution": """
         Please find the CRS Training below
         """,
@@ -205,12 +203,12 @@ faqs = {
 
     }, "How to Reuse the same UCC if expired": {
         "solution":
-        """
-        1. Go to **Admin Panel > Clients** under **Main**.
-        2. Click **Action** and select **Register/Update Client on BSE**.
-        3. This will register the client with the same UCC.
-        4. Log in to **BSE** and trigger the UCC mail.
-        """,
+            """
+            1. Go to **Admin Panel > Clients** under **Main**.
+            2. Click **Action** and select **Register/Update Client on BSE**.
+            3. This will register the client with the same UCC.
+            4. Log in to **BSE** and trigger the UCC mail.
+            """,
         "media": "Coming Soon..."
     },
 
@@ -226,7 +224,7 @@ faqs = {
     },
 
     "How to onboard HUF client": {
-    "solution": """
+        "solution": """
     Documentation Required:
     1. HUF PAN Copy
     2. Image of KARTA's signature under his seal (blue ink)
@@ -267,11 +265,11 @@ faqs = {
 
     By following these steps, you can successfully onboard HUF clients and ensure all necessary documentation is submitted and authenticated.
     """,
-    "media": "Coming Soon..."
-},
+        "media": "Coming Soon..."
+    },
 
     "How to Onboard Minor Client": {
-    "solution": """
+        "solution": """
     How to onboard minor clients using FundExpert:
 
     Documents for Minor:
@@ -301,8 +299,8 @@ faqs = {
        - Go to Admin -> Main -> Users.
        - Click on "Mark AOF as Done" in Quick Action for that client.
     """,
-    "media": "Coming Soon..."
-},
+        "media": "Coming Soon..."
+    },
     "How to Onboard NRI Clients": {
         "solution": """
     **Documents Required:**
@@ -337,9 +335,8 @@ faqs = {
         "media": "Coming Soon..."
     },
 
-
-        "How to onboard PartnerShip firm": {
-            "solution": """
+    "How to onboard PartnerShip firm": {
+        "solution": """
 
 How to Onboard a Partnership Firm
 
@@ -392,9 +389,37 @@ How to Onboard a Partnership Firm
 
 By following these steps, you can successfully onboard a partnership account and ensure all necessary documentation is submitted and authenticated.
         """,
-            "media": "Coming Soon..."
-        }
+        "media": "Coming Soon..."
+    },
 
+    "BSE Onboarding Checklist": {
+        "solution": """
+        DETAILS required to onboard a new client who is
+        KYC compliant on FundExpert to open an account at BSEStar:
+
+1. **Full Name as per PAN:**
+2. **Email:**
+3. **Mobile:**
+4. **PAN No:**
+5. **Date of Birth:**
+6. **Occupation:**
+7. **Marital Status:**
+8. **Address & Pincode:**
+9. **Bank Details:**
+    - a) Bank IFSC Code:
+    - b) Bank Account Number:
+    - c) Bank Account Type:
+10. **Nominee Details:**
+    - a) Nominee Name:
+    - b) Relation with Nominee:
+    - c) Percentage:
+11. **Place of Birth:**
+12. **Specimen Signature Image:** 
+    - On white plain paper with blue ink pen.
+
+        """,
+        "media": "Coming Soon..."
+    }
 
 }
 
