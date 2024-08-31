@@ -63,7 +63,7 @@ faqs = {
         4. Mark as **Inactive**.
         5. Click **Submit** to save the changes.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1uYZ2xj7s7vT6lY_eAy-iy-RYjk4PdfMM/preview"
     },
     "How to Delete External Holdings?": {
         "solution": """
@@ -87,7 +87,7 @@ faqs = {
         2. Select a specific client or all clients.
         3. Click **Apply** to share the login details via email, which will include your website and app links along with their credentials.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1i9p-6tErEASNQA5MXpYdZWRx6vy2de4T/preview"
     },
     "How to Enable the Redeem Option for Clients?": {
         "solution": """
@@ -97,7 +97,7 @@ faqs = {
         4. Enable the **Allow Redeem on App** option.
         5. Click **Submit** to save the changes.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1E1JMqD4_yxzY2LSpfNyyjV7ihNB26nk1/preview"
     },
     "How to Update BSE Client Master?": {
         "solution": """
