@@ -28,7 +28,7 @@ faqs = {
         3. Once all members are added, click **Submit** to form the family account.
         4. To view the family accounts, go to **Admin Panel > Main > Client Families**.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1griEzJ3e1EIdhGV_-o3P67TkKQPIklQo/preview"
     },
     "How to Remove Family Link?": {
         "solution": """
@@ -45,7 +45,7 @@ faqs = {
         2. In the **Left Menu**, click on **My Family Accounts**.
         3. Click the **X** icon next to the family member you want to remove.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1vFvOY9zNm6Z8X4LXUDv7jt2eK01mZ-Cu/preview"
     },
     "How to Register AMC in BSE Star MF?": {
         "solution": """
