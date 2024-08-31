@@ -74,7 +74,7 @@ faqs = {
         3. Click on **Action**.
         4. Select **Delete All External Holdings**.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1-He13ftzVFHCjnPm8G1zrIPI092puNag/preview"
     },
     "How to Send Login Details?": {
         "solution": """
@@ -190,7 +190,7 @@ faqs = {
         3. Click Action and select Update Mandate from BSE.
         4. This will fetch all mandates attached to the UCC.
         """,
-        "media": "Coming Soon..."
+        "media": "https://drive.google.com/file/d/1l5GN2JNHQNnipOTS3ykQi13hOoy4dvLK/preview"
 
     }, "How to Change the Family Head": {
         "solution": """
@@ -369,17 +369,6 @@ faqs = {
         "media": "Coming Soon..."
     },
 
-"How to Delete External Holding": {
-    "solution": """
-    How to delete external holding:
-
-    1. Navigate to the Admin panel.
-    2. Click on "Clients" under the Main section.
-    3. Click on "Action" next to the desired client.
-    4. In the Action menu, click on "Delete External Holding".
-    """,
-    "media": "Coming Soon..."
-},
 
 
 }
