@@ -224,10 +224,162 @@ faqs = {
         """,
         "media": "Coming Soon..."
     },
+"HUF Onboarding Process": {
+    "solution": """
+    Documentation Required:
+    1. HUF PAN Copy
+    2. Image of KARTA's signature under his seal (blue ink)
 
+    Onboarding Process from Fund Expert (FE):
 
+    1. Add Client:
+    - Use the "Add Client" option to onboard the client as HUF.
 
+    2. Fill out Details and Create UCC:
+    - Fill out all necessary details and create the UCC.
+    - Ensure the UCC is authenticated by the client.
 
+    3. Upload Documents:
+    - In the "Upload Document" section, upload the HUF PAN and Karta’s signature image.
+    - Download AOF (Application-cum-Client Agreement Form): Click on "Download Generated AOF" to download the AOF.
+
+    4. Upload AOF in BSE:
+    - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
+    - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+
+    5. Mark AOF as Done in FE:
+    - In FE, go to admin -> Main -> Users.
+    - Click on "Mark AOF as Done" in Quick Action for that client.
+
+    6. Fill out FATCA and Submit from FE:
+    - Fill out the FATCA form and submit it from FE.
+    - Download AOF in PDF from BSE: Login to BSE and download the AOF in PDF format.
+    - Path: Admin » Client Details » AOF / FATCA Download.
+
+    7. Upload FATCA in BSE:
+    - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
+    - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
+
+    8. Mark FATCA as Done in FE:
+    - In FE, go to admin -> Main -> Users.
+    - Click on "Mark FATCA as Done" in Quick Action for that client.
+
+    By following these steps, you can successfully onboard HUF clients and ensure all necessary documentation is submitted and authenticated.
+    """,
+    "media": "Coming Soon..."
+},
+
+    "How to Onboard Minor Client": {
+    "solution": """
+    How to onboard minor clients using FundExpert:
+
+    Documents for Minor:
+    1. Proof of Date of Birth of the Minor:
+       - You can click a picture of either of the following documents:
+         Birth Certificate, School Leaving Certificate, or others.
+    2. If the guardian is not a parent, then a picture of the court order specifying the individual as the Guardian.
+    3. Signature Image of the guardian in blue ink on a white sheet of paper.
+
+    Process:
+    1. Onboard the client on FundExpert and create the UCC.
+    2. Once the UCC is created, ensure it is authenticated.
+    3. For minors, upload the cheque or bank statement directly on BSE:
+       - From FE’s admin, directly login to BSE.
+       - In BSE -> Admin -> Client Details -> Elog/Image Upload.
+       - Enter the client code, select the type as cheque, and upload the bank proof in PDF.
+       - BSE will take 24 hours to make the UCC active.
+
+    4. From the front panel:
+       - Upload all the documents and download the AOF by clicking on "Download Generated AOF".
+    
+    5. From FE’s admin, directly login to BSE:
+       - In BSE -> Admin -> Client Details -> Elog/Image Upload.
+       - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+    
+    6. In FE:
+       - Go to Admin -> Main -> Users.
+       - Click on "Mark AOF as Done" in Quick Action for that client.
+    """,
+    "media": "Coming Soon..."
+},
+    "How to Onboard NRI Clients": {
+        "solution": """
+    **Documents Required:**
+    1. **Cheque Copy with NRI Tax Status:**
+       - The cheque copy must clearly display the NRI Tax status.
+    2. **Standard Onboarding Documents:**
+       - All other documents required for individual client onboarding (e.g., PAN card, proof of address, etc.).
+
+    **Onboarding Process from Fund Expert (FE):**
+
+    1. **Add Client:**
+       - Navigate to the "Add Client" option in FundExpert.
+       - Select the client type as **NRI** to onboard the client accordingly.
+
+    2. **Fill out Details and Create UCC:**
+       - Enter all necessary client details in the onboarding form.
+       - Create the **Unique Client Code (UCC)** for the client.
+       - **Important:** Ensure that the UCC is authenticated by the client to proceed.
+
+    3. **Upload Documents:**
+       - Go to the "Upload Document" section within FundExpert.
+       - Upload the **Cheque Copy with NRI Tax Status** and any other required standard documents.
+       - After uploading, click on **"Download Generated AOF"** to obtain the Application-cum-Client Agreement Form (AOF).
+
+    4. **Upload AOF in BSE:**
+       - Log in to **BSE** and navigate to:  
+         **Admin > Client Details > Elog/Image Upload**
+       - Enter the **Client Code**.
+       - Select the **Type** as **UCC**.
+       - Upload the previously downloaded **AOF** file.
+
+    5. **Mark AOF as Done in FE:**
+       - Return to **FundExpert** and go to:  
+         **Admin > Main > Users**
+       - Locate the specific client.
+       - Click on **"Mark AOF as Done"** in the Quick Action menu for that client.
+
+    6. **Fill out FATCA and Submit from FE:**
+       - Complete the **FATCA** (Foreign Account Tax Compliance Act) form within FundExpert.
+       - Submit the FATCA form directly from FundExpert.
+
+    7. **Download AOF in PDF from BSE:**
+       - Log in to **BSE**.
+       - Navigate to:  
+         **Admin > Client Details > AOF / FATCA Download**
+       - Download the **AOF** in PDF format.
+
+    8. **Upload FATCA in BSE:**
+       - Go back to:  
+         **Admin > Client Details > Elog/Image Upload** in BSE.
+       - Upload the **first 3 pages** of the FATCA form as a PDF.
+       - **Ensure:** The client's signature is included on the **3rd page** of the FATCA PDF.
+
+    9. **Mark FATCA as Done in FE:**
+       - In **FundExpert**, navigate to:  
+         **Admin > Main > Users**
+       - Locate the specific client.
+       - Click on **"Mark FATCA as Done"** in the Quick Action menu for that client.
+
+    **Completion:**
+    - Once all the above steps are completed, the NRI client's onboarding process is successfully finalized.
+    - The client's UCC will become active within 24 hours after uploading the necessary documents in BSE.
+
+    """,
+        "media": "Coming Soon..."
+    },
+
+"How to Delete External Holding": {
+    "solution": """
+    How to delete external holding:
+
+    1. Navigate to the Admin panel.
+    2. Click on "Clients" under the Main section.
+    3. Click on "Action" next to the desired client.
+    4. In the Action menu, click on "Delete External Holding".
+    """,
+    "media": "Coming Soon..."
+},
 
 
 }
