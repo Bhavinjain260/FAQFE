@@ -224,7 +224,8 @@ faqs = {
         """,
         "media": "Coming Soon..."
     },
-"HUF Onboarding Process": {
+
+    "How to onboard HUF client": {
     "solution": """
     Documentation Required:
     1. HUF PAN Copy
@@ -336,6 +337,63 @@ faqs = {
         "media": "Coming Soon..."
     },
 
+
+        "How to onboard PartnerShip firm": {
+            "solution": """
+
+How to Onboard a Partnership Firm
+
+**Required Documents:**
+1. Cancelled Cheque
+2. PAN Image
+3. Company's Sign with Seal (on white paper)
+4. Partnership Deed (First and Last Page)
+
+**Process:**
+
+1. **Onboard the Client on FundExpert:**
+    - Register the partnership firm as a client in FundExpert.
+    - After the profile is saved, the BSE UCC will be created.
+
+2. **Complete Required Authentication:**
+    - Once the UCC is created, ensure that the required authentication is done.
+
+3. **Upload Documents and Download AOF:**
+    - Upload all the required documents listed above.
+    - Download the AOF (Account Opening Form) by clicking on "Download AOF Generated."
+
+4. **Upload AOF to BSE:**
+    - In FundExpert (FE) Admin, use the option "Directly Login to BSE."
+    - In BSE, navigate to: 
+      - Admin → Client Details → Elog/Image Upload
+    - Enter the client code, select the type as "UCC," and upload the downloaded AOF.
+
+5. **Mark AOF as Done in FundExpert:**
+    - In FE, go to:
+      - Admin → Main → Users
+    - Click on "Mark AOF as Done" in Quick Action for that client.
+
+6. **Fill Out and Submit FATCA in FundExpert:**
+    - Fill out the FATCA form and submit it from FE.
+
+7. **Download AOF from BSE:**
+    - Login to BSE and download the AOF in PDF format.
+    - Path: Admin → Client Details → AOF/FATCA Download
+
+8. **Upload FATCA to BSE:**
+    - Navigate to:
+      - BSE → Admin → Client Details → Elog/Image Upload
+    - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
+
+9. **Mark FATCA as Done in FundExpert:**
+    - In FE, go to:
+      - Admin → Main → Users
+    - Click on "Mark FATCA as Done" in Quick Action for that client.
+
+By following these steps, you can successfully onboard a partnership account and ensure all necessary documentation is submitted and authenticated.
+        """,
+            "media": "Coming Soon..."
+        }
 
 
 }
