@@ -443,7 +443,69 @@ faqs = {
         **If your Aadhaar Phone linking is not available, then the online Digilocker Aadhaar KYC mode cannot be completed. Please reach out to your advisor for further assistance.
                 """,
         "media": "https://drive.google.com/file/d/1Icg0pDS-05KZjjHVvEgjVkQxyUH0cNgi/preview"
+    }, "How to check Nominee authentication status": {
+        "solution": """
+1. Navigate to BSE.
+2. Go to Admin.
+3. Click on Admin Report.
+4. Select Client Master Report New to check the nominee authentication status.
+        """,
+        "media": "Coming Soon..."
+    },
+    "How to resend Nominee authentication link": {
+        "solution": """
+1. Navigate to BSE.
+2. Go to Admin.
+3. Click on Nominee Resend Authentication.
+4. Click on the Clients name from the list and click on resend 
+        """,
+        "media": "Coming Soon..."
+    },
+    "How to Remove profile picture from app": {
+
+        "solution": """
+        1. Navigate to the admin panel.
+        2. Click on Clients under Main.
+        3. Search and click on the client's name to open the account.
+        4. Click on Action.
+        5. Click on "Remove Profile Picture."
+                """,
+        "media": "Coming Soon..."
+    },
+    "How to remove Mpin": {
+        "solution": """
+        1. Navigate to the admin panel.
+        2. Click on Clients under Main.
+        3. Search and click on the client's name to open the account.
+        4. Click on Action.
+        5. Click on "Remove Mpin."
+        """,
+        "media": "Coming Soon..."
+    },
+    "How to update Nse data for all clients": {
+        "solution": """
+1. Navigate to the admin panel.
+2. Under Upload Utilities, click on NSE.
+3. For updating the IINs, click on "Add all IINs."
+   - For updating the Mandates, click on "Update all Mandates."
+   - For updating bank details, click on "Update all bank details for all IINs."
+        """,
+        "media": "Coming Soon..."
+    },
+    "How to update Nse data for specific client": {
+        "solution": """
+1. Navigate to the admin panel.
+2. Click on Clients under Main.
+3. Search and click on the client's name to open the account.
+4. Click on Action.
+   - For updating the mandate data, click on "Update Mandates from NSE."
+   - For updating the details in IIN, click on "Update IIN details from NSE."
+   - For updating the bank details, click on "Update All Bank Accounts as per NSE."
+        """,
+        "media": "Coming Soon..."
     }
+
+
 
 }
 
