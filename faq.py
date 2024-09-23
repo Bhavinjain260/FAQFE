@@ -503,6 +503,65 @@ faqs = {
    - For updating the bank details, click on "Update All Bank Accounts as per NSE."
         """,
         "media": "Coming Soon..."
+    },
+    "How to onboard Private Limted Company using BSE": {
+        "solution": """
+        Here’s the complete onboarding process tailored for a Private Limited Company:
+        
+        ### **Private Limited Company Onboarding Process**
+        **Documents and Details Required:**
+        
+        - **PAN Card**: Company PAN
+        - **Board Resolution**: Authorizing the account opening
+        - **Authorized Signatory List**
+        - **Signature Image**: With seal (blue ink)
+        
+        ### **Onboarding Process via Fund Expert (FE):**
+        
+        1. **Add Client as a Private Limited Company:**
+           - Use the "Add Client" option in Fund Expert to onboard the client as a Private Limited Company.
+           - Fill out all necessary details such as the company's name, contact information, and address.
+        
+        2. **Fill out Details and Create UCC:**
+           - Complete the required fields to create the UCC (Unique Client Code).
+           - Ensure the UCC is authenticated by the client.
+        
+        3. **Upload Documents:**
+           - In the "Upload Document" section, upload the company's PAN, Board Resolution, Authorized Signatory list, and the signature image with the blue ink seal.
+        
+        4. **Download the AOF (Account Opening Form):**
+           - After filling out the details, download the AOF by clicking on the "Download Generated AOF" option.
+        
+        5. **Upload the AOF to BSE:**
+           - Go to BSE > Admin > Client Details > Elog/Image Uploaded.
+           - Enter the client code and select "UCC" as the document type.
+           - Upload the AOF that was generated and downloaded in the previous step.
+        
+        6. **Mark AOF as Done in FE:**
+           - In Fund Expert, navigate to Admin > Main > Users.
+           - Use the "Quick Action" option to select "Mark AOF as Done" for that client.
+        
+        7. **Complete FATCA and Submit from FE:**
+           - Complete the FATCA form in FE with the required financial and tax information.
+           - Submit the FATCA form from Fund Expert.
+        
+        8. **Download the AOF from BSE in PDF format:**
+           - In BSE, navigate to Admin > Client Details > AOF / FATCA Download.
+           - Download the AOF document in PDF format.
+        
+        9. **Upload FATCA in BSE:**
+           - Go to BSE > Admin > Client Details > Elog/Image Uploaded.
+           - Upload the first 3 pages of the FATCA form as a PDF.
+           - Ensure the company's authorized signatory's signature is on the third page.
+        
+        10. **Mark FATCA as Done in FE:**
+            - In FE, go to Admin > Main > Users.
+            - Select the client and click on "Mark FATCA as Done" under Quick Actions.
+        
+        By following these steps, you can successfully complete the onboarding process for Private Limited Company clients, ensuring all documents are authenticated and properly submitted. Let me know if there's anything else you need!
+
+        """
+
     }
 
 
