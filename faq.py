@@ -560,7 +560,7 @@ faqs = {
         
         By following these steps, you can successfully complete the onboarding process for Private Limited Company clients, ensuring all documents are authenticated and properly submitted. Let me know if there's anything else you need!
 
-        """
+        """, "media": "Coming Soon..."
 
     }
 
