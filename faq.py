@@ -581,7 +581,60 @@ bse_solutions = {
         """, "media": "Coming Soon..."
 
     },
-    
+
+    " How to onboard Proprietorship using BSE": {
+        "solution": """
+        Documents and Details Required:
+        
+        Bank Details: Provide the current account details.
+        Signature: Proprietor’s signature on a white paper.
+        Onboarding Process via Fund Expert (FE):
+        1. Add Client as Proprietorship:
+        
+        Use the "Add Client" option in Fund Expert to onboard the client as a Proprietorship.
+        Fill out all necessary details such as the proprietor's name, contact information, and address.
+        2. Fill out Details and Create UCC:
+        
+        Complete the required fields to create the UCC (Unique Client Code).
+        Ensure the UCC is authenticated by the client.
+        3. Upload Documents:
+        
+        In the "Upload Document" section, upload the Proprietorship PAN and the proprietor’s signature.
+        4. Download the AOF (Account Opening Form):
+        
+        After filling out the details, download the AOF by clicking on the "Download Generated AOF" option.
+        5. Upload the AOF to BSE:
+        
+        Go to BSE > Admin > Client Details > Elog/Image Uploaded.
+        Enter the client code and select "UCC" as the document type.
+        Upload the AOF that was generated and downloaded in the previous step.
+        6. Mark AOF as Done in FE:
+        
+        In Fund Expert, navigate to Admin > Main > Users.
+        Use the "Quick Action" option to select "Mark AOF as Done" for that client.
+        7. Complete FATCA and Submit from FE:
+        
+        Complete the FATCA form in FE with the required financial and tax information.
+        Submit the FATCA form from Fund Expert.
+        8. Download the AOF from BSE in PDF format:
+        
+        In BSE, navigate to Admin > Client Details > AOF / FATCA Download.
+        Download the AOF document in PDF format.
+        9. Upload FATCA in BSE:
+        
+        Go to BSE > Admin > Client Details > Elog/Image Uploaded.
+        Upload the first 3 pages of the FATCA form as a PDF.
+        Ensure the client's signature is on the third page.
+        10. Mark FATCA as Done in FE:
+        
+        In FE, go to Admin > Main > Users.
+        Select the client and click on "Mark FATCA as Done" under Quick Actions.
+        
+        By following these steps, you can successfully complete the onboarding process for Proprietorship clients, ensuring all documents are authenticated and properly submitted.
+                
+    """, "media": "Coming Soon..."
+
+    }
 
 }
 
