@@ -1,6 +1,44 @@
 import streamlit as st
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-faqs = {
+# Email configuration
+SMTP_SERVER = st.secrets["smtp"]["server"]
+SMTP_PORT = st.secrets["smtp"]["port"]
+EMAIL_ADDRESS = st.secrets["smtp"]["email"]
+EMAIL_PASSWORD = st.secrets["smtp"]["password"]  # Replace with your email password
+TO_EMAIL_ADDRESS = st.secrets["smtp"]["to"]
+
+
+# Function to send email
+def send_email(name, arn, message):
+    try:
+        # Set up the server
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
+        server.starttls()
+        server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+
+        # Create the email content
+        email_message = MIMEMultipart()
+        email_message['From'] = EMAIL_ADDRESS
+        email_message['To'] = TO_EMAIL_ADDRESS  # Sending to the same email
+        email_message['Subject'] = "New Contact Us Form Submission"
+
+        body = f"Name: {name}\nARN: {arn}\nMessage:\n{message}"
+        email_message.attach(MIMEText(body, 'plain'))
+
+        # Send the email
+        server.send_message(email_message)
+        server.quit()
+        return True
+    except Exception as e:
+        st.error(f"Error sending email: {str(e)}")
+        return False
+
+
+# Dictionaries for each section
+home_solutions = {
     "How to Update BSE Password in FundExpert?": {
         "solution": """
         To update your BSE password, follow these steps:
@@ -44,16 +82,6 @@ faqs = {
         3. Click the **X** icon next to the family member you want to remove.
         """,
         "media": "https://drive.google.com/file/d/1vFvOY9zNm6Z8X4LXUDv7jt2eK01mZ-Cu/preview"
-    },
-    "How to Register AMC in BSE Star MF?": {
-        "solution": """
-        1. Log in to the **BSE Star MF** portal.
-        2. Go to the **Admin** section.
-        3. Navigate to **Member Masters > Member AMC Mapping**.
-        4. Choose the AMC with which you are empaneled.
-        5. Click **Submit** to save changes.
-        """,
-        "media": "Coming Soon..."
     },
     "How to Mark Clients Inactive?": {
         "solution": """
@@ -176,14 +204,14 @@ faqs = {
     },
     "CRM Training video": {
         "solution": """
-        Please find the CRS Training below
+        Kindly click [here](https://vimeo.com/fundexpert/otherproductscrmenglish?ts=124000) and watch the video from 1hr:02min onwards to know about CRM.
         """,
-        "media": "https://player.vimeo.com/video/804824760#t=61m53s"
-
+        "media": "Coming Soon..."
     },
+
     "How to Update Mandate from BSE": {
         "solution": """
-        
+
         1. Go to Admin Panel > Clients under Main.
         2. Search and select the client by clicking on their name.
         3. Click Action and select Update Mandate from BSE.
@@ -198,7 +226,7 @@ faqs = {
         2. Search and select the client by clicking on their name.
         3. Search and select the client by clicking on their name.
         4. Click Action and select Make User Family Head.
-        
+
         Note: The selected member must already be an existing family member.
         """,
         "media": "Coming Soon..."
@@ -214,209 +242,27 @@ faqs = {
             """,
         "media": "Coming Soon..."
     },
-    "How to resend UCC Authentication mail from BSE": {
-        "solution": """
-        1. Log in to **BSE**.
-        2. Go to **Admin > Resend Email Authentication**.
-        3. Select **Process Type: UCC Authentication**.
-        4. Enter **Client ID**.
-        5. Click **Send** to resend the UCC Authentication mail.
-        """,
-        "media": "Coming Soon..."
-    },
-    "How to onboard HUF client": {
+
+    "How to Remove profile picture from app": {
 
         "solution": """
-        
-        Documentation Required:
-        1. HUF PAN Copy
-        2. Image of KARTA's signature under his seal (blue ink)
-
-        Onboarding Process from Fund Expert (FE):
-    
-        1. Add Client:
-        - Use the "Add Client" option to onboard the client as HUF.
-    
-        2. Fill out Details and Create UCC:
-        - Fill out all necessary details and create the UCC.
-        - Ensure the UCC is authenticated by the client.
-    
-        3. Upload Documents:
-        - In the "Upload Document" section, upload the HUF PAN and Karta’s signature image.
-        - Download AOF (Application-cum-Client Agreement Form): Click on "Download Generated AOF" to download the AOF.
-    
-        4. Upload AOF in BSE:
-        - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
-        - Enter the client code, select the type as UCC, and upload the downloaded AOF.
-    
-        5. Mark AOF as Done in FE:
-        - In FE, go to admin -> Main -> Users.
-        - Click on "Mark AOF as Done" in Quick Action for that client.
-    
-        6. Fill out FATCA and Submit from FE:
-        - Fill out the FATCA form and submit it from FE.
-        - Download AOF in PDF from BSE: Login to BSE and download the AOF in PDF format.
-        - Path: Admin » Client Details » AOF / FATCA Download.
-    
-        7. Upload FATCA in BSE:
-        - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
-        - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
-    
-        8. Mark FATCA as Done in FE:
-        - In FE, go to admin -> Main -> Users.
-        - Click on "Mark FATCA as Done" in Quick Action for that client.
-
-        By following these steps, you can successfully onboard HUF clients and ensure all necessary documentation is submitted and authenticated.
-        """,
+    1. Navigate to the admin panel.
+    2. Click on Clients under Main.
+    3. Search and click on the client's name to open the account.
+    4. Click on Action.
+    5. Click on "Remove Profile Picture."
+            """,
         "media": "Coming Soon..."
     },
 
-    "How to Onboard Minor Client": {
-
+    "How to remove M-pin": {
         "solution": """
-        Documents for Minor:
-        1. Proof of Date of Birth of the Minor:
-           - You can click a picture of either of the following documents:
-             Birth Certificate, School Leaving Certificate, or others.
-        2. If the guardian is not a parent, then a picture of the court order specifying the individual as the Guardian.
-        3. Signature Image of the guardian in blue ink on a white sheet of paper.
-    
-        Process:
-        1. Onboard the client on FundExpert and create the UCC.
-        2. Once the UCC is created, ensure it is authenticated.
-        3. For minors, upload the cheque or bank statement directly on BSE:
-           - From FE’s admin, directly login to BSE.
-           - In BSE -> Admin -> Client Details -> Elog/Image Upload.
-           - Enter the client code, select the type as cheque, and upload the bank proof in PDF.
-           - BSE will take 24 hours to make the UCC active.
-    
-        4. From the front panel:
-           - Upload all the documents and download the AOF by clicking on "Download Generated AOF".
-        
-        5. From FE’s admin, directly login to BSE:
-           - In BSE -> Admin -> Client Details -> Elog/Image Upload.
-           - Enter the client code, select the type as UCC, and upload the downloaded AOF.
-        
-        6. In FE:
-           - Go to Admin -> Main -> Users.
-           - Click on "Mark AOF as Done" in Quick Action for that client.
-        """,
-        "media": "Coming Soon..."
-    },
-    "How to Onboard NRI Clients": {
-        "solution": """
-        
-        **Documents Required:**
-        1. **Cheque Copy with NRI Tax Status:**
-           - The cheque copy must clearly display the NRI Tax status.
-        2. **Standard Onboarding Documents:**
-           - All other documents required for individual client onboarding (e.g., PAN card, proof of address, etc.).
-    
-        **Onboarding Process from Fund Expert (FE):**
-    
-        1. **Add Client:**
-           - Navigate to the "Add Client" option in FundExpert.
-           - Select the client type as **NRI** to onboard the client accordingly.
-    
-        2. **Fill out Details and Create UCC:**
-           - Enter all necessary client details in the onboarding form.
-           - Create the **Unique Client Code (UCC)** for the client.
-           - **Important:** Ensure that the UCC is authenticated by the client to proceed.
-    
-        3. **Upload Documents:**
-           - Go to the "Upload Document" section within FundExpert.
-           - Upload the **Cheque Copy with NRI Tax Status** and any other required standard documents.
-           - After uploading, click on **"Download Generated AOF"** to obtain the Application-cum-Client Agreement Form (AOF).
-    
-        4. Complete the Profile by Submitting the AOF and FATCA (Same as individual client)
-    
-        **Completion:**
-        - Once all the above steps are completed, the NRI client's onboarding process is successfully finalized.
-        - The client's UCC will become active within 24 hours after uploading the necessary documents in BSE.
-        """,
-        "media": "Coming Soon..."
-    },
-    "How to onboard PartnerShip firm": {
-        "solution": """
-        
-        How to Onboard a Partnership Firm
-        
-        **Required Documents:**
-        1. Cancelled Cheque
-        2. PAN Image
-        3. Company's Sign with Seal (on white paper)
-        4. Partnership Deed (First and Last Page)
-        
-        **Process:**
-        
-        1. **Onboard the Client on FundExpert:**
-            - Register the partnership firm as a client in FundExpert.
-            - After the profile is saved, the BSE UCC will be created.
-        
-        2. **Complete Required Authentication:**
-            - Once the UCC is created, ensure that the required authentication is done.
-        
-        3. **Upload Documents and Download AOF:**
-            - Upload all the required documents listed above.
-            - Download the AOF (Account Opening Form) by clicking on "Download AOF Generated."
-        
-        4. **Upload AOF to BSE:**
-            - In FundExpert (FE) Admin, use the option "Directly Login to BSE."
-            - In BSE, navigate to: 
-              - Admin → Client Details → Elog/Image Upload
-            - Enter the client code, select the type as "UCC," and upload the downloaded AOF.
-        
-        5. **Mark AOF as Done in FundExpert:**
-            - In FE, go to:
-              - Admin → Main → Users
-            - Click on "Mark AOF as Done" in Quick Action for that client.
-        
-        6. **Fill Out and Submit FATCA in FundExpert:**
-            - Fill out the FATCA form and submit it from FE.
-        
-        7. **Download AOF from BSE:**
-            - Login to BSE and download the AOF in PDF format.
-            - Path: Admin → Client Details → AOF/FATCA Download
-        
-        8. **Upload FATCA to BSE:**
-            - Navigate to:
-              - BSE → Admin → Client Details → Elog/Image Upload
-            - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
-        
-        9. **Mark FATCA as Done in FundExpert:**
-            - In FE, go to:
-              - Admin → Main → Users
-            - Click on "Mark FATCA as Done" in Quick Action for that client.
-        
-        By following these steps, you can successfully onboard a partnership account and ensure all necessary documentation is submitted and authenticated.
-                """,
-        "media": "Coming Soon..."
-    },
-    "BSE Onboarding Checklist": {
-
-        "solution": """
-        DETAILS required to onboard a new client who is
-        KYC compliant on FundExpert to open an account at BSEStar:
-        1. **Full Name as per PAN:**
-        2. **Email:**
-        3. **Mobile:**
-        4. **PAN No:**
-        5. **Date of Birth:**
-        6. **Occupation:**
-        7. **Marital Status:**
-        8. **Address & Pincode:**
-        9. **Bank Details:**
-            - a) Bank IFSC Code:
-            - b) Bank Account Number:
-            - c) Bank Account Type:
-        10. **Nominee Details:**
-            - a) Nominee Name:
-            - b) Relation with Nominee:
-            - c) Percentage:
-        11. **Place of Birth:**
-        12. **Specimen Signature Image:** 
-            - On white plain paper with blue ink pen.
-                """,
+    1. Navigate to the admin panel.
+    2. Click on Clients under Main.
+    3. Search and click on the client's name to open the account.
+    4. Click on Action.
+    5. Click on "Remove Mpin."
+    """,
         "media": "Coming Soon..."
     },
 
@@ -427,162 +273,392 @@ faqs = {
 
         Step 1 → Fill in your Identity details & upload a scanned copy of your PAN Card.
         Ensure the scanned image has PAN Number, Name, DOB, Signature, Father’s Name, Photo, and issuer name clearly visible.
-        
+
         Step 2 → You will be redirected to the Digilocker platform to fetch address details & necessary address proof. 
         Aadhaar to Phone linking is mandatory for this step, so please ensure you have the registered phone number available to input the OTP**.
-        
+
         Step 3 → Upload a scanned image of your signature.
-        
+
         Step 4 → Enter additional details required for KYC.
-        
+
         Step 5 → You will be redirected to review your KYC details and e-sign the document using Aadhaar for final submission.
-        
+
         Step 6 → Completion of e-sign will put your KYC for review. In 5 to 7 working days, you will receive a notification via email.
-        
+
         *NRIs, Minors, and Non-individuals cannot use the online Digilocker Aadhaar KYC mode. Please reach out to your advisor for further assistance.
         **If your Aadhaar Phone linking is not available, then the online Digilocker Aadhaar KYC mode cannot be completed. Please reach out to your advisor for further assistance.
                 """,
         "media": "https://drive.google.com/file/d/1Icg0pDS-05KZjjHVvEgjVkQxyUH0cNgi/preview"
-    }, "How to check Nominee authentication status": {
+    },
+}
+
+bse_solutions = {
+
+    "BSE Onboarding Checklist": {
+
         "solution": """
-1. Navigate to BSE.
-2. Go to Admin.
-3. Click on Admin Report.
-4. Select Client Master Report New to check the nominee authentication status.
-        """,
+    DETAILS required to onboard a new client who is
+    KYC compliant on FundExpert to open an account at BSEStar:
+    1. **Full Name as per PAN:**
+    2. **Email:**
+    3. **Mobile:**
+    4. **PAN No:**
+    5. **Date of Birth:**
+    6. **Occupation:**
+    7. **Marital Status:**
+    8. **Address & Pincode:**
+    9. **Bank Details:**
+        - a) Bank IFSC Code:
+        - b) Bank Account Number:
+        - c) Bank Account Type:
+    10. **Nominee Details:**
+        - a) Nominee Name:
+        - b) Relation with Nominee:
+        - c) Percentage:
+    11. **Place of Birth:**
+    12. **Specimen Signature Image:** 
+        - On white plain paper with blue ink pen.
+            """,
+        "media": "Coming Soon..."
+    },
+
+    "How to resend UCC Authentication mail from BSE": {
+        "solution": """
+    1. Log in to **BSE**.
+    2. Go to **Admin > Resend Email Authentication**.
+    3. Select **Process Type: UCC Authentication**.
+    4. Enter **Client ID**.
+    5. Click **Send** to resend the UCC Authentication mail.
+    """,
+        "media": "Coming Soon..."
+    },
+
+    "How to check Nominee authentication status": {
+        "solution": """
+        1. Navigate to BSE.
+        2. Go to Admin.
+        3. Click on Admin Report.
+        4. Select Client Master Report New to check the nominee authentication status.
+                """,
         "media": "Coming Soon..."
     },
     "How to resend Nominee authentication link": {
         "solution": """
-1. Navigate to BSE.
-2. Go to Admin.
-3. Click on Nominee Resend Authentication.
-4. Click on the Clients name from the list and click on resend 
-        """,
+    1. Navigate to BSE.
+    2. Go to Admin.
+    3. Click on Nominee Resend Authentication.
+    4. Click on the Clients name from the list and click on resend 
+            """,
         "media": "Coming Soon..."
     },
-    "How to Remove profile picture from app": {
+
+    "How to Onboard Minor Client": {
 
         "solution": """
-        1. Navigate to the admin panel.
-        2. Click on Clients under Main.
-        3. Search and click on the client's name to open the account.
-        4. Click on Action.
-        5. Click on "Remove Profile Picture."
-                """,
+    Documents for Minor:
+    1. Proof of Date of Birth of the Minor:
+       - You can click a picture of either of the following documents:
+         Birth Certificate, School Leaving Certificate, or others.
+    2. If the guardian is not a parent, then a picture of the court order specifying the individual as the Guardian.
+    3. Signature Image of the guardian in blue ink on a white sheet of paper.
+
+    Process:
+    1. Onboard the client on FundExpert and create the UCC.
+    2. Once the UCC is created, ensure it is authenticated.
+    3. For minors, upload the cheque or bank statement directly on BSE:
+       - From FE’s admin, directly login to BSE.
+       - In BSE -> Admin -> Client Details -> Elog/Image Upload.
+       - Enter the client code, select the type as cheque, and upload the bank proof in PDF.
+       - BSE will take 24 hours to make the UCC active.
+
+    4. From the front panel:
+       - Upload all the documents and download the AOF by clicking on "Download Generated AOF".
+
+    5. From FE’s admin, directly login to BSE:
+       - In BSE -> Admin -> Client Details -> Elog/Image Upload.
+       - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+
+    6. In FE:
+       - Go to Admin -> Main -> Users.
+       - Click on "Mark AOF as Done" in Quick Action for that client.
+    """,
         "media": "Coming Soon..."
     },
-    "How to remove Mpin": {
+
+    "How to Onboard NRI Clients": {
         "solution": """
-        1. Navigate to the admin panel.
-        2. Click on Clients under Main.
-        3. Search and click on the client's name to open the account.
-        4. Click on Action.
-        5. Click on "Remove Mpin."
-        """,
+
+    **Documents Required:**
+    1. **Cheque Copy with NRI Tax Status:**
+       - The cheque copy must clearly display the NRI Tax status.
+    2. **Standard Onboarding Documents:**
+       - All other documents required for individual client onboarding (e.g., PAN card, proof of address, etc.).
+
+    **Onboarding Process from Fund Expert (FE):**
+
+    1. **Add Client:**
+       - Navigate to the "Add Client" option in FundExpert.
+       - Select the client type as **NRI** to onboard the client accordingly.
+
+    2. **Fill out Details and Create UCC:**
+       - Enter all necessary client details in the onboarding form.
+       - Create the **Unique Client Code (UCC)** for the client.
+       - **Important:** Ensure that the UCC is authenticated by the client to proceed.
+
+    3. **Upload Documents:**
+       - Go to the "Upload Document" section within FundExpert.
+       - Upload the **Cheque Copy with NRI Tax Status** and any other required standard documents.
+       - After uploading, click on **"Download Generated AOF"** to obtain the Application-cum-Client Agreement Form (AOF).
+
+    4. Complete the Profile by Submitting the AOF and FATCA (Same as individual client)
+
+    **Completion:**
+    - Once all the above steps are completed, the NRI client's onboarding process is successfully finalized.
+    - The client's UCC will become active within 24 hours after uploading the necessary documents in BSE.
+    """,
         "media": "Coming Soon..."
     },
-    "How to update Nse data for all clients": {
+
+    "How to onboard HUF client": {
+
         "solution": """
-1. Navigate to the admin panel.
-2. Under Upload Utilities, click on NSE.
-3. For updating the IINs, click on "Add all IINs."
-   - For updating the Mandates, click on "Update all Mandates."
-   - For updating bank details, click on "Update all bank details for all IINs."
-        """,
+
+    Documentation Required:
+    1. HUF PAN Copy
+    2. Image of KARTA's signature under his seal (blue ink)
+
+    Onboarding Process from Fund Expert (FE):
+
+    1. Add Client:
+    - Use the "Add Client" option to onboard the client as HUF.
+
+    2. Fill out Details and Create UCC:
+    - Fill out all necessary details and create the UCC.
+    - Ensure the UCC is authenticated by the client.
+
+    3. Upload Documents:
+    - In the "Upload Document" section, upload the HUF PAN and Karta’s signature image.
+    - Download AOF (Application-cum-Client Agreement Form): Click on "Download Generated AOF" to download the AOF.
+
+    4. Upload AOF in BSE:
+    - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
+    - Enter the client code, select the type as UCC, and upload the downloaded AOF.
+
+    5. Mark AOF as Done in FE:
+    - In FE, go to admin -> Main -> Users.
+    - Click on "Mark AOF as Done" in Quick Action for that client.
+
+    6. Fill out FATCA and Submit from FE:
+    - Fill out the FATCA form and submit it from FE.
+    - Download AOF in PDF from BSE: Login to BSE and download the AOF in PDF format.
+    - Path: Admin » Client Details » AOF / FATCA Download.
+
+    7. Upload FATCA in BSE:
+    - Navigate to BSE -> Admin -> Client Details -> Elog/Image Uploaded.
+    - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
+
+    8. Mark FATCA as Done in FE:
+    - In FE, go to admin -> Main -> Users.
+    - Click on "Mark FATCA as Done" in Quick Action for that client.
+
+    By following these steps, you can successfully onboard HUF clients and ensure all necessary documentation is submitted and authenticated.
+    """,
         "media": "Coming Soon..."
     },
-    "How to update Nse data for specific client": {
+
+    "How to onboard PartnerShip firm": {
         "solution": """
-1. Navigate to the admin panel.
-2. Click on Clients under Main.
-3. Search and click on the client's name to open the account.
-4. Click on Action.
-   - For updating the mandate data, click on "Update Mandates from NSE."
-   - For updating the details in IIN, click on "Update IIN details from NSE."
-   - For updating the bank details, click on "Update All Bank Accounts as per NSE."
-        """,
+
+    How to Onboard a Partnership Firm
+
+    **Required Documents:**
+    1. Cancelled Cheque
+    2. PAN Image
+    3. Company's Sign with Seal (on white paper)
+    4. Partnership Deed (First and Last Page)
+
+    **Process:**
+
+    1. **Onboard the Client on FundExpert:**
+        - Register the partnership firm as a client in FundExpert.
+        - After the profile is saved, the BSE UCC will be created.
+
+    2. **Complete Required Authentication:**
+        - Once the UCC is created, ensure that the required authentication is done.
+
+    3. **Upload Documents and Download AOF:**
+        - Upload all the required documents listed above.
+        - Download the AOF (Account Opening Form) by clicking on "Download AOF Generated."
+
+    4. **Upload AOF to BSE:**
+        - In FundExpert (FE) Admin, use the option "Directly Login to BSE."
+        - In BSE, navigate to: 
+          - Admin → Client Details → Elog/Image Upload
+        - Enter the client code, select the type as "UCC," and upload the downloaded AOF.
+
+    5. **Mark AOF as Done in FundExpert:**
+        - In FE, go to:
+          - Admin → Main → Users
+        - Click on "Mark AOF as Done" in Quick Action for that client.
+
+    6. **Fill Out and Submit FATCA in FundExpert:**
+        - Fill out the FATCA form and submit it from FE.
+
+    7. **Download AOF from BSE:**
+        - Login to BSE and download the AOF in PDF format.
+        - Path: Admin → Client Details → AOF/FATCA Download
+
+    8. **Upload FATCA to BSE:**
+        - Navigate to:
+          - BSE → Admin → Client Details → Elog/Image Upload
+        - Upload the first 3 pages of the FATCA as a PDF, ensuring the client's signature is included on the 3rd page.
+
+    9. **Mark FATCA as Done in FundExpert:**
+        - In FE, go to:
+          - Admin → Main → Users
+        - Click on "Mark FATCA as Done" in Quick Action for that client.
+
+    By following these steps, you can successfully onboard a partnership account and ensure all necessary documentation is submitted and authenticated.
+            """,
         "media": "Coming Soon..."
     },
     "How to onboard Private Limted Company using BSE": {
         "solution": """
         Here’s the complete onboarding process tailored for a Private Limited Company:
-        
+
         ### **Private Limited Company Onboarding Process**
         **Documents and Details Required:**
-        
+
         - **PAN Card**: Company PAN
         - **Board Resolution**: Authorizing the account opening
         - **Authorized Signatory List**
         - **Signature Image**: With seal (blue ink)
-        
+
         ### **Onboarding Process via Fund Expert (FE):**
-        
+
         1. **Add Client as a Private Limited Company:**
            - Use the "Add Client" option in Fund Expert to onboard the client as a Private Limited Company.
            - Fill out all necessary details such as the company's name, contact information, and address.
-        
+
         2. **Fill out Details and Create UCC:**
            - Complete the required fields to create the UCC (Unique Client Code).
            - Ensure the UCC is authenticated by the client.
-        
+
         3. **Upload Documents:**
            - In the "Upload Document" section, upload the company's PAN, Board Resolution, Authorized Signatory list, and the signature image with the blue ink seal.
-        
+
         4. **Download the AOF (Account Opening Form):**
            - After filling out the details, download the AOF by clicking on the "Download Generated AOF" option.
-        
+
         5. **Upload the AOF to BSE:**
            - Go to BSE > Admin > Client Details > Elog/Image Uploaded.
            - Enter the client code and select "UCC" as the document type.
            - Upload the AOF that was generated and downloaded in the previous step.
-        
+
         6. **Mark AOF as Done in FE:**
            - In Fund Expert, navigate to Admin > Main > Users.
            - Use the "Quick Action" option to select "Mark AOF as Done" for that client.
-        
+
         7. **Complete FATCA and Submit from FE:**
            - Complete the FATCA form in FE with the required financial and tax information.
            - Submit the FATCA form from Fund Expert.
-        
+
         8. **Download the AOF from BSE in PDF format:**
            - In BSE, navigate to Admin > Client Details > AOF / FATCA Download.
            - Download the AOF document in PDF format.
-        
+
         9. **Upload FATCA in BSE:**
            - Go to BSE > Admin > Client Details > Elog/Image Uploaded.
            - Upload the first 3 pages of the FATCA form as a PDF.
            - Ensure the company's authorized signatory's signature is on the third page.
-        
+
         10. **Mark FATCA as Done in FE:**
             - In FE, go to Admin > Main > Users.
             - Select the client and click on "Mark FATCA as Done" under Quick Actions.
-        
+
         By following these steps, you can successfully complete the onboarding process for Private Limited Company clients, ensuring all documents are authenticated and properly submitted. Let me know if there's anything else you need!
 
         """, "media": "Coming Soon..."
 
-    }
-
-
+    },
+    
 
 }
 
-st.title("FundExpert FAQ")
-st.subheader("By Bhavin")
+nse_solutions = {
 
-# Search functionality
-search_query = st.text_input("Search FAQs", "")
+    "How to update Nse data for all clients": {
+        "solution": """
+    1. Navigate to the admin panel.
+    2. Under Upload Utilities, click on NSE.
+    3. For updating the IINs, click on "Add all IINs."
+       - For updating the Mandates, click on "Update all Mandates."
+       - For updating bank details, click on "Update all bank details for all IINs."
+            """,
+        "media": "Coming Soon..."
+    },
+    "How to update Nse data for specific client": {
+        "solution": """
+    1. Navigate to the admin panel.
+    2. Click on Clients under Main.
+    3. Search and click on the client's name to open the account.
+    4. Click on Action.
+       - For updating the mandate data, click on "Update Mandates from NSE."
+       - For updating the details in IIN, click on "Update IIN details from NSE."
+       - For updating the bank details, click on "Update All Bank Accounts as per NSE."
+            """,
+        "media": "Coming Soon..."},
+}
 
-# Filter FAQs based on the search query
-if search_query:
-    matched_faqs = {header: content for header, content in faqs.items() if search_query.lower() in header.lower()}
-    if matched_faqs:
-        for header, content in matched_faqs.items():
-            st.header(header)
-            st.subheader("Solution")
+mfu_solutions = {
+}
+
+
+def search_solution(query, solutions_dicts):
+    results = {}
+    for solutions_dict in solutions_dicts:
+        for title, content in solutions_dict.items():
+            if query.lower() in title.lower():
+                results[title] = content
+    return results if results else {}
+
+
+# Main function for Streamlit app
+def main():
+    st.sidebar.title("Navigation")
+    page = st.sidebar.selectbox("Select a page", ["Home", "BSE", "NSE", "MFU", "Contact Us"])
+
+    st.title("FundExpert - Financial Portal")
+    st.text("By Bhavin")
+
+    # Search functionality
+    search_query = st.text_input("Search for solutions")
+
+    # Create a list of all solution dictionaries
+    all_solutions = [home_solutions, bse_solutions, nse_solutions]  # Add mfu_solutions when available
+
+    # Determine which page's solutions to display
+    if page == "Home":
+        solutions_dict = home_solutions
+    elif page == "BSE":
+        solutions_dict = bse_solutions
+    elif page == "NSE":
+        solutions_dict = nse_solutions
+    elif page == "MFU":
+        solutions_dict = {}  # Replace with actual MFU solutions
+    else:  # Contact Us
+        solutions_dict = {}
+
+    # Display matching solutions or all solutions if no search
+    if search_query:
+        results = search_solution(search_query, all_solutions)  # Search in all solutions
+    else:
+        results = solutions_dict
+
+    if results:
+        for title, content in results.items():
+            st.subheader(title)
             st.write(content["solution"])
-            st.subheader("Screenshot/Video")
             if content["media"] != "Coming Soon...":
                 st.markdown(
                     f'<iframe src="{content["media"]}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>',
@@ -590,19 +666,22 @@ if search_query:
                 )
             else:
                 st.write(content["media"])
-    else:
-        st.write("No FAQs found for your search query.")
-else:
-    # Display all FAQs when there's no search query
-    for header, content in faqs.items():
-        st.header(header)
-        st.subheader("Solution")
-        st.write(content["solution"])
-        st.subheader("Screenshot/Video")
-        if content["media"] != "Coming Soon...":
-            st.markdown(
-                f'<iframe src="{content["media"]}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>',
-                unsafe_allow_html=True,
-            )
-        else:
-            st.write(content["media"])
+
+    # Contact Us page
+    if page == "Contact Us":
+        st.subheader("Contact Us Form")
+        with st.form("contact_form"):
+            name = st.text_input("Name")
+            arn = st.text_input("ARN")
+            message = st.text_area("Message")
+            submit_button = st.form_submit_button(label="Submit")
+
+            if submit_button:
+                if send_email(name, arn, message):
+                    st.success("Thank you for reaching out! We'll get back to you soon.")
+                else:
+                    st.error("Failed to send your message. Please try again later.")
+
+
+if __name__ == "__main__":
+    main()
